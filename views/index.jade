@@ -1,35 +1,72 @@
 doctype html
 html
   head
-    meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    title #{__('TITLE', community)}
-    link(href="css/style.css", rel="stylesheet", type="text/css")
-    link(href="//fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Dev Of Future
+    link(href='css/style.css', rel='stylesheet', type='text/css')
+    link(href='//fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800', rel='stylesheet', type='text/css')
+    link(rel='shortcut icon', href='https://slack.global.ssl.fastly.net/272a/img/icons/favicon-32.png')
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Lobster|Pacifico&subset=latin-ext', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Lato:100i', rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
   body
-    #wrapper
-      .main
-        .header
-          h1
-            strong #{community}
-          h2 #{__('HEADER', community)}
-        .content
-          .information
-            form(method="POST", action="/invite")#join-form.form
-              input(type="email", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
-              if tokenRequired
-                input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
-              input(type="submit", value="Join").submit
-    script.
-      var tokenRequired = #{tokenRequired};
-      var form = document.getElementById('join-form');
-      var email = document.getElementById('slack-email');
-      var token = document.getElementById('slack-token');
-      form.addEventListener('submit', function(evt) {
-        if (!email.value) {
-          evt.preventDefault();
-        }
-        if (tokenRequired && !token.value) {
-          evt.preventDefault();
-        }
-      });
+    style.
+      body
+      {
+      padding-top: 100px;
+      background: url("http://loading.io/assets/img/bk-icon.jpg") repeat-x;
+      color: black ;
+      font-family:Lato;
+      }
+      .form-control
+      {
+      border-color: #3498DB ;
+      background: transparent ;
+      }
+      .well
+      {
+      padding: 50px;
+      }
+    .container(align='center')
+    h3(style='font-family: Lobster')
+      | Dev Of Future
+      span(style='font-family: Lato')  For generate a slack invitation.
+    br
+    .row(style='padding-right:90px;')
+      .col-md-5.col-md-offset-3(style='margin-left: 60px; padding-left:300px')
+        img.img-responsive(src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Slack_Icon.png/64px-Slack_Icon.png')
+      .col-md-2
+        img.img-responsive(src='http://zupimages.net/up/17/10/j6vc.png')
+    br
+    p This web application is designed to help everyone to join DOF Family easily.
+    .row
+      .col-lg-offset-3.col-lg-6.col-lg-offset-3
+        form#join-form.form(method='post', action='/invite')
+          input#slack-email.form-control.input-lg.field(type='email', name='email', placeholder='you@yourdomain.com')
+          br
+          button#submit.btn.btn-info.btn-lg.btn-block(type='submit', name='submit')
+            i.fa.fa-envelope-o
+            |  Get my invitation
+    span
+      i.fa.fa-terminal(style='font-size: 2em;color: #666')
+      |  with 
+      i.test.fa.fa-heart(style='font-size: 2em;color: #666')
+      |  by DOF
+  script.
+    var tokenRequired = ;
+    var form = document.getElementById('join-form');
+    var email = document.getElementById('slack-email');
+    var token = document.getElementById('slack-token');
+    form.addEventListener('submit', function(evt) {
+    if (!email.value) {
+    evt.preventDefault();
+    }
+    if (tokenRequired && !token.value) {
+    evt.preventDefault();
+    }
+    });
