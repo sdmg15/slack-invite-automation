@@ -1,11 +1,36 @@
 doctype html
 html
   head
-    meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    title #{__('TITLE', community)}
-    link(href="css/style.css", rel="stylesheet", type="text/css")
-    link(href="//fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
+    meta(charset='utf-8')
+    link(rel='shortcut icon', href='https://slack.global.ssl.fastly.net/272a/img/icons/favicon-32.png')
+    // Loading Bootstrap
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    // Loading Flat-UI
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.css')
+    // Loading Personal style
+    link(rel='stylesheet', href='/css/style.css')
+    // Loading Font-Awesome glyphicon
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Lobster|Pacifico&subset=latin-ext', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Lobster', rel='stylesheet')
+    title Dev Of Future
+  style.
+    body
+    {
+    padding-top: 100px;
+    background: url("http://loading.io/assets/img/bk-icon.jpg") repeat-x;
+    color: black ;
+    font-family:Pacifico , Lobster;
+    }
+    .form-control
+    {
+    border-color: #3498DB ;
+    background: transparent ;
+    }
+    .well
+    {
+    padding: 50px;
+    }
   body
     #wrapper
       .main
